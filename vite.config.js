@@ -1,5 +1,12 @@
+// vite.config.js
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
-
 export default defineConfig({
-  // 기본 설정만 유지 - index.html을 진입점으로 사용
-})
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+            },
+        },
+    },
+});
